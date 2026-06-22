@@ -21,10 +21,12 @@ import { Toaster } from "./components/refine-ui/notification/toaster";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import "./App.css";
 import DashboardPage from "./pages/dashboard";
-import { BookOpen, Building2, Home } from "lucide-react";
+import { BookOpen, Building2, GraduationCap, Home } from "lucide-react";
 import SubjectsListPage from "./pages/subjects/list";
 import SubjectsCreatePage from "./pages/subjects/create";
 import DepartmentsListPage from "./pages/departments/list";
+import ClassesListPage from "./pages/classes/list";
+import ClassesCreatePage from "./pages/classes/create";
 
 function App() {
   return (
@@ -73,6 +75,17 @@ function App() {
                     icon: <Building2 />,
                   },
                 },
+                {
+                  name: "classes",
+                  list: "/classes",
+                  create: "/classes/create",
+                  edit: "/classes/edit/:id",
+                  show: "/classes/show/:id",
+                  meta: {
+                    label: "Classes",
+                    icon: <GraduationCap />,
+                  },
+                }
               ]}
             >
               <Routes>
@@ -92,6 +105,11 @@ function App() {
 
                   <Route path="departments">
                     <Route index element={<DepartmentsListPage />} />
+                  </Route>
+
+                  <Route path='classes'>
+                   <Route index element={<ClassesListPage />} />
+                   <Route path="create" element={<ClassesCreatePage />} />
                   </Route>
                 </Route>
               </Routes>
