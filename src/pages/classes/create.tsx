@@ -63,6 +63,21 @@ const ClassesCreatePage = () => {
     },
   });
 
+  // Fetch teachers list
+  const { query: teachersQuery } = useList<User>({
+    resource: "users",
+    filters: [
+      {
+        field: "role",
+        operator: "eq",
+        value: "teacher",
+      },
+    ],
+    pagination: {
+      pageSize: 100,
+    },
+  });
+
   const teachers = teachersQuery.data?.data || [];
   const teachersLoading = teachersQuery.isLoading;
 
