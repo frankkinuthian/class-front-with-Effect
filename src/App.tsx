@@ -28,6 +28,8 @@ import DepartmentsListPage from "./pages/departments/list";
 import ClassesListPage from "./pages/classes/list";
 import ClassesCreatePage from "./pages/classes/create";
 import ClassesShow from "./pages/classes/show";
+import DepartmentsCreate from "./pages/departments/create";
+import DepartmentsShow from "./pages/departments/show";
 
 function App() {
   return (
@@ -105,6 +107,8 @@ function App() {
 
                   <Route path="departments">
                     <Route index element={<DepartmentsListPage />} />
+                    <Route path="create" element={<DepartmentsCreate />} />
+                    <Route path="show/:id" element={<DepartmentsShow />} />
                   </Route>
 
                   {/* Classes */}
