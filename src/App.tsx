@@ -27,6 +27,7 @@ import SubjectsCreatePage from "./pages/subjects/create";
 import DepartmentsListPage from "./pages/departments/list";
 import ClassesListPage from "./pages/classes/list";
 import ClassesCreatePage from "./pages/classes/create";
+import ClassesShow from "./pages/classes/show";
 
 function App() {
   return (
@@ -85,7 +86,7 @@ function App() {
                     label: "Classes",
                     icon: <GraduationCap />,
                   },
-                }
+                },
               ]}
             >
               <Routes>
@@ -107,9 +108,11 @@ function App() {
                     <Route index element={<DepartmentsListPage />} />
                   </Route>
 
-                  <Route path='classes'>
-                   <Route index element={<ClassesListPage />} />
-                   <Route path="create" element={<ClassesCreatePage />} />
+                  {/* Classes */}
+                  <Route path="classes">
+                    <Route index element={<ClassesListPage />} />
+                    <Route path="create" element={<ClassesCreatePage />} />
+                    <Route path="show/:id" element={<ClassesShow />} />
                   </Route>
                 </Route>
               </Routes>
