@@ -80,7 +80,6 @@ function App() {
                   name: "classes",
                   list: "/classes",
                   create: "/classes/create",
-                  edit: "/classes/edit/:id",
                   show: "/classes/show/:id",
                   meta: {
                     label: "Classes",
