@@ -30,6 +30,7 @@ import ClassesCreatePage from "./pages/classes/create";
 import ClassesShow from "./pages/classes/show";
 import DepartmentsCreate from "./pages/departments/create";
 import DepartmentsShow from "./pages/departments/show";
+import SubjectsShow from "./pages/subjects/show";
 
 function App() {
   return (
@@ -59,7 +60,6 @@ function App() {
                   name: "subjects",
                   list: "/subjects",
                   create: "/subjects/create",
-                  edit: "/subjects/edit/:id",
                   show: "/subjects/show/:id",
                   meta: {
                     label: "Subjects",
@@ -71,7 +71,6 @@ function App() {
                   name: "departments",
                   list: "/departments",
                   create: "/departments/create",
-                  edit: "/departments/edit/:id",
                   show: "/departments/show/:id",
                   meta: {
                     label: "Departments",
@@ -100,11 +99,14 @@ function App() {
                 >
                   <Route path="/" element={<DashboardPage />} />
 
+                  {/* Subjects */}
                   <Route path="subjects">
                     <Route index element={<SubjectsListPage />} />
                     <Route path="create" element={<SubjectsCreatePage />} />
+                    <Route path="show/:id" element={<SubjectsShow />} />
                   </Route>
 
+                  {/* Departments */}
                   <Route path="departments">
                     <Route index element={<DepartmentsListPage />} />
                     <Route path="create" element={<DepartmentsCreate />} />
